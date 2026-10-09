@@ -1,0 +1,31 @@
+{
+  "name": "unixcoder-base",
+  "method": "dense",
+  "model": "models/unixcoder-base",
+  "split": "test",
+  "protocol": "full",
+  "n_queries": 21763,
+  "metrics": {
+    "MRR@10": 0.4985233420053987,
+    "R@1": 0.3946147130450765,
+    "R@5": 0.6377797178697789,
+    "R@10": 0.7197537104259523,
+    "median_rank": 2.0
+  },
+  "seconds": {
+    "index": 87.4,
+    "total": 87.7
+  },
+  "config": {
+    "model": "models/unixcoder-base",
+    "split": "test",
+    "protocol": "full",
+    "limit": null,
+    "query_max_len": 64,
+    "code_max_len": 256,
+    "batch_size": 128,
+    "no_fp16": false,
+    "k1": 1.2,
+    "b": 0.75
+  }
+}

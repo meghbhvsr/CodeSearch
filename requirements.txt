@@ -1,0 +1,18 @@
+torch>=2.1            # install the CUDA build: pip install torch --index-url https://download.pytorch.org/whl/cu121
+sentence-transformers>=3.4,<6
+transformers>=4.44,<5   # 5.x needs torch>=2.6
+pyarrow                 # reads the CodeSearchNet parquet files directly
+huggingface-hub
+datasets>=3.0,<4.2      # used by the sentence-transformers trainer; 5.x needs huggingface-hub>=1.x, which transformers 4.x rejects
+accelerate>=0.26
+tensorboard
+tree-sitter>=0.22       # Phase 3: split repos into functions
+tree-sitter-python
+faiss-cpu
+rich
+fastapi                 # web app backend (codesearch-web)
+uvicorn
+numpy
+scipy
+tqdm
+pytest

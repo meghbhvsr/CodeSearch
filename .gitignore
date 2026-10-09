@@ -1,0 +1,44 @@
+# ---- Large or regenerable ML artifacts (rebuilt by the scripts; see README) ----
+# Cleaned CodeSearchNet splits and mined hard negatives (~500 MB)
+data/
+# Local copy of the base model (~500 MB)
+models/
+# Fine-tuned models and TensorBoard logs (~500 MB per run)
+checkpoints/
+wandb/
+runs/
+# results/*.json are small and make up the results table; per-query ranks are regenerable
+results/*.ranks.npy
+
+# ---- Search app runtime data ----
+.index_cache/
+.repos/
+demo_repos/
+
+# ---- Frontend ----
+frontend/node_modules/
+frontend/dist/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# ---- Secrets, editors, OS ----
+.env
+.env.*
+*.log
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini

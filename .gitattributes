@@ -1,0 +1,4 @@
+# Store text files with LF line endings regardless of the OS that commits them.
+* text=auto eol=lf
+*.png binary
+*.npy binary

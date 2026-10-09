@@ -1,0 +1,31 @@
+{
+  "name": "bm25",
+  "method": "bm25",
+  "model": null,
+  "split": "test",
+  "protocol": "full",
+  "n_queries": 21763,
+  "metrics": {
+    "MRR@10": 0.4135604225607901,
+    "R@1": 0.3158112392592933,
+    "R@5": 0.5434452970638239,
+    "R@10": 0.6204567385011258,
+    "median_rank": 4.0
+  },
+  "seconds": {
+    "index": 3.0,
+    "total": 6.1
+  },
+  "config": {
+    "model": "microsoft/unixcoder-base",
+    "split": "test",
+    "protocol": "full",
+    "limit": null,
+    "query_max_len": 64,
+    "code_max_len": 256,
+    "batch_size": 128,
+    "no_fp16": false,
+    "k1": 1.2,
+    "b": 0.75
+  }
+}

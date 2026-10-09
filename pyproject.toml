@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codesearch"
+version = "0.1.0"
+description = "Semantic code search with a fine-tuned UniXcoder"
+requires-python = ">=3.10"
+
+[project.scripts]
+codesearch = "codesearch.cli:main"
+codesearch-web = "codesearch.server:main"
+
+[tool.setuptools]
+packages = ["codesearch"]
