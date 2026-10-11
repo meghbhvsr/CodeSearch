@@ -44,7 +44,7 @@ from pydantic import BaseModel, Field  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 REPOS_DIR = ROOT / ".repos"
 FRONTEND_DIST = ROOT / "frontend" / "dist"
-MODEL_PATH = os.environ.get("CODESEARCH_MODEL", str(ROOT / "checkpoints" / "mnrl" / "final"))
+MODEL_PATH = os.environ.get("CODESEARCH_MODEL", str(ROOT / "checkpoints" / "mnrl-hn" / "final"))
 MAX_FUNCTIONS = 60_000  # ~2 min of embedding on a 3060 Ti
 CLONE_TIMEOUT_S = 300
 

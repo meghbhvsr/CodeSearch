@@ -4,7 +4,7 @@
   codesearch retry failed http requests ./requests -k 5     # quotes optional
   codesearch ./requests                                     # interactive: one model load, many queries
 
-The model defaults to the fine-tuned checkpoints/mnrl/final; override it with --model or
+The model defaults to the fine-tuned checkpoints/mnrl-hn/final (hard negatives); override it with --model or
 the CODESEARCH_MODEL environment variable.
 """
 
@@ -27,7 +27,7 @@ from rich.console import Console  # noqa: E402
 from rich.syntax import Syntax  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MODEL = ROOT / "checkpoints" / "mnrl" / "final"
+DEFAULT_MODEL = ROOT / "checkpoints" / "mnrl-hn" / "final"
 console = Console(highlight=False)
 
 

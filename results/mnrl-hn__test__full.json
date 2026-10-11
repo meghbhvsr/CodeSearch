@@ -1,0 +1,31 @@
+{
+  "name": "mnrl-hn",
+  "method": "dense",
+  "model": "checkpoints/mnrl-hn/final",
+  "split": "test",
+  "protocol": "full",
+  "n_queries": 21763,
+  "metrics": {
+    "MRR@10": 0.7508423171992074,
+    "R@1": 0.6569866286817074,
+    "R@5": 0.8751091301750678,
+    "R@10": 0.9160042273583605,
+    "median_rank": 1.0
+  },
+  "seconds": {
+    "index": 49.5,
+    "total": 49.7
+  },
+  "config": {
+    "model": "checkpoints/mnrl-hn/final",
+    "split": "test",
+    "protocol": "full",
+    "limit": null,
+    "query_max_len": 64,
+    "code_max_len": 256,
+    "batch_size": 128,
+    "no_fp16": false,
+    "k1": 1.2,
+    "b": 0.75
+  }
+}

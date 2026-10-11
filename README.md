@@ -33,7 +33,7 @@ docstring removed.
 | BM25 (code-aware tokenizer) | 0.414 | 0.316 | 0.543 | 0.620 | 0.711 |
 | UniXcoder-base, zero-shot | 0.499 | 0.395 | 0.638 | 0.720 | 0.800 |
 | + fine-tuned (MNRL) | 0.734 | 0.637 | 0.864 | 0.909 | 0.936 |
-| + hard negatives | | | | | |
+| + hard negatives | **0.751** | **0.657** | **0.875** | **0.916** | **0.940** |
 
 ### Data and eval issues found while building this
 
@@ -103,6 +103,10 @@ python scripts/eval.py dense --model checkpoints/mnrl-hn/final --name mnrl-hn
   boilerplate docstrings shared by many functions ("Auto Generated Code" appears 1,779 times).
 - **Retraining starts from the base model, not the first fine-tune.** Both runs then differ
   only in the negatives, so the table row isolates their effect.
+- **Result.** Full-protocol MRR@10 rises from 0.734 to 0.751 (+1.7), and R@1 from 0.637 to
+  0.657. On the 5k validation subset used for checkpoint selection, the best checkpoint
+  (step 1500) reaches 0.861, against 0.851 for the first fine-tune. The `codesearch` CLI and
+  web app now use `checkpoints/mnrl-hn/final` by default.
 
 ## Phase 3: the `codesearch` tool
 
@@ -115,9 +119,9 @@ codesearch demo_repos/requests        # interactive: load once, search many time
 ```
 
 ```
- 1. 0.759  src/requests/utils.py:810  should_bypass_proxies
- 2. 0.657  src/requests/utils.py:137  proxy_bypass
- 3. 0.552  src/requests/utils.py:99   proxy_bypass_registry
+ 1. 0.768  src/requests/utils.py:810  should_bypass_proxies
+ 2. 0.636  src/requests/utils.py:137  proxy_bypass
+ 3. 0.568  src/requests/utils.py:99   proxy_bypass_registry
 711 functions searched in 14 ms (443 in test code hidden; --tests to include)
 ```
 
