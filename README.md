@@ -125,6 +125,8 @@ codesearch demo_repos/requests        # interactive: load once, search many time
 711 functions searched in 14 ms (443 in test code hidden; --tests to include)
 ```
 
+![Searching the Requests repository for proxy bypass logic](assets/codesearch-demo.gif)
+
 - **Chunking.** tree-sitter splits the repo into one chunk per function (methods and nested
   functions included, named `Class.method`), never by line count. That's the unit people
   search for and the unit the model was trained on. Unlike `ast`, tree-sitter is
@@ -176,8 +178,8 @@ http://localhost:5173. Vite hot-reloads the UI and forwards `/api` to the backen
   for a connection" ranks `HTTPAdapter.__init__` 1st, while the question form ranks it
   55th. Training on synthetic question-style queries (the plan's stretch idea) targets
   exactly this.
-- **Next steps:** a cross-encoder reranker over the top 50, and BM25 + dense hybrid scoring,
-  since exact identifiers like `max_retries` are where BM25 is strong.
+- **Next steps:** try BM25 + dense hybrid scoring, since exact identifiers like `max_retries`
+  are where BM25 is strong.
 
 ## Layout
 
